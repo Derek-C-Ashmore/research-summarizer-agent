@@ -6,11 +6,16 @@ The agent takes a topic string, runs a web search via Tavily, asks Claude to wri
 
 ## Prereqs
 
+- Claude Code installed and working (we will be using it extensively)
 - Python 3.11, 3.12, or 3.13.
-- Anthropic API key with access to `claude-haiku-4-5-20251001` and `claude-sonnet-4-6` (the eval judge).
-- Tavily API key (free tier is enough for the workshop).
+- Anthropic API key with access to `claude-haiku-4-5-20251001` and `claude-sonnet-4-6` (the eval judge). Instructions are [here](https://support.claude.com/en/articles/8114521-how-can-i-access-the-claude-api).
+- Tavily API key (free tier is enough for the workshop). Signup is [here](https://www.tavily.com/?utm_term=tavily%20key&utm_campaign=Tavily+Brand+-+General+-+noram&utm_source=adwords&utm_medium=ppc&matchtype=e&device=c&utm_content=799226621414_&utm_position=&gad_source=1&gad_campaignid=23618630592&gbraid=0AAAABB_ZBWrGxPB26jWzy_RrBzm53gyt3&gclid=CjwKCAjwtvvPBhBuEiwAPMijrxnL17B8nRYAEjeS5TOG8awtuVjlq-0GjQdSKJ9_IyM4OpcjmAG2bhoCyVUQAvD_BwE)
 
 ## Setup
+
+> Fork the repository
+
+This isn't strictly needed, but it allows you to keep your work.
 
 ```bash
 python -m venv .venv
