@@ -1,17 +1,17 @@
-# Research Summarizer Agent
+# Agent Testing Workshop -- Research Summarizer Agent
 
-A workshop teaching vehicle for the AI Agent Testing Pyramid. Not a production system — every design decision is calibrated for ten-minute comprehension, not robustness.
+Attendees for this workshop should complete the prerequisites and the setup sections before the workshop. Please raise an issue on the repository if you have trouble.
 
-The agent takes a topic string, runs a web search via Tavily, asks Claude to write a structured summary, and returns a `SummaryResult`. Each call is stateless.
+## Prerequisites
 
-## Prereqs
+> Attendees need the fllowing software installed.
 
 - Claude Code installed and working (we will be using it extensively)
 - Python 3.11, 3.12, or 3.13.
 - Anthropic API key with access to `claude-haiku-4-5-20251001` and `claude-sonnet-4-6` (the eval judge). Instructions are [here](https://support.claude.com/en/articles/8114521-how-can-i-access-the-claude-api).
 - Tavily API key (free tier is enough for the workshop). Signup is [here](https://www.tavily.com/?utm_term=tavily%20key&utm_campaign=Tavily+Brand+-+General+-+noram&utm_source=adwords&utm_medium=ppc&matchtype=e&device=c&utm_content=799226621414_&utm_position=&gad_source=1&gad_campaignid=23618630592&gbraid=0AAAABB_ZBWrGxPB26jWzy_RrBzm53gyt3&gclid=CjwKCAjwtvvPBhBuEiwAPMijrxnL17B8nRYAEjeS5TOG8awtuVjlq-0GjQdSKJ9_IyM4OpcjmAG2bhoCyVUQAvD_BwE)
 
-> Note:  In developing and writing the test solutions in preparation for this workshop, I spent $0.15 USD for my Anthropic Key.My Tavily usage was 17 credits and well within the free tier threshold. 
+> Note:  In developing and writing the test solutions in preparation for this workshop, I spent less than $1 USD for my Anthropic Key.My Tavily usage was well within the free tier threshold. 
 
 Costs for this workshop are expected to be low. 
 
@@ -20,6 +20,13 @@ Costs for this workshop are expected to be low.
 > Fork the repository
 
 This isn't strictly needed, but it allows you to keep your work.
+
+> Clone the repository locally
+
+> Install the Python dependencies and verify setup.
+
+- At a command prompt, change your current directory to the root folder for the repository clone. 
+- Execute the bash commands below. A slight adjustment if you're using Windows.
 
 ```bash
 python -m venv .venv
@@ -32,7 +39,7 @@ python verify_setup.py
 
 `verify_setup.py` exits 0 when everything is wired up; exits 1 otherwise.
 
-## How the agent works
+# How the agent works
 
 `from agent import summarize` exposes the single public entry point. Internally it walks five short steps: validate input, call the search tool, format a user message, call Claude with a forced `tool_use` for structured output, parse the result. The full source under `agent/` is well under 250 lines combined; reading it end-to-end takes less than ten minutes.
 
